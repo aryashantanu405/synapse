@@ -1,64 +1,63 @@
+// packages/services/api-server/utils/seeder.js
+
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import path from 'path'; // Import the path module
+import { fileURLToPath } from 'url'; // Helper to work with paths in ES modules
+
+import connectDB from '../config/db.js';
 import User from '../models/user.model.js';
 import Project from '../models/project.model.js';
-import connectDB from '../config/db.js';
 
+// --- THE FIX IS HERE ---
+// Construct the absolute path to the .env file in the parent directory
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 dotenv.config();
+
+// Connect to DB
 connectDB();
 
-// --- DUMMY DATA ---
+// --- (The rest of your seeder.js file remains exactly the same) ---
+
 const users = [
   {
     clerkId: 'user_2iABCDEfgHijKLMnoPQRstuvw',
-    name: 'Alice Johnson',
     username: 'alice_dev',
     email: 'alice@example.com',
-    image: { url: '/path/to/your/placeholder-image.png' },
+    userArchetype: 'JavaNewbie',
+    mistakePatterns: [
+      { patternId: 'java.NullPointerException', language: 'java', occurrenceCount: 28 },
+      { patternId: 'java.TypeMismatch', language: 'java', occurrenceCount: 20 }
+    ]
   },
   {
-    clerkId: 'user_3jBCDEfghIjkLMNPQRSTuvwx',
-    name: 'Bob Williams',
-    username: 'bob_codes',
+    clerkId: 'user_3jBCDEfghIjkLMNOPqrstuvwx',
+    username: 'bob_coder',
     email: 'bob@example.com',
-    image: { url: '/path/to/your/placeholder-image.png' },
+    userArchetype: 'PointerStruggler (C++)',
+    mistakePatterns: [
+      { patternId: 'cpp.PointerErrors', language: 'cpp', occurrenceCount: 22 },
+      { patternId: 'cpp.MemoryLeaks', language: 'cpp', occurrenceCount: 18 }
+    ]
   },
 ];
+const projects = [{ name: 'My First Java Project', language: 'java' }];
 
 const importData = async () => {
   try {
-    // Clear existing data
-    await Project.deleteMany();
     await User.deleteMany();
-
-    // Insert new users
+    await Project.deleteMany();
     const createdUsers = await User.insertMany(users);
     console.log('Users Imported!');
-
-    // Get admin user ID to assign as project owner
-    const adminUser = createdUsers[0]._id;
-
-    // Create a sample project for the first user
-    const sampleProject = {
-      name: 'My First Python Project',
-      language: 'python',
-      owner: adminUser,
-      files: [
-        {
-          name: 'main.py',
-          content: 'print("Hello, Synapse!")',
-          language: 'python',
-        },
-      ],
-    };
-
-    await Project.create(sampleProject);
-    console.log('Sample Project Imported!');
-
+    const adminUserId = createdUsers[0]._id;
+    const sampleProjects = projects.map(project => ({ ...project, owner: adminUserId }));
+    await Project.insertMany(sampleProjects);
+    console.log('Projects Imported!');
     console.log('Data Imported Successfully!');
     process.exit();
   } catch (error) {
-    console.error(`Error with data import: ${error}`);
+    console.error(`Error: ${error}`);
     process.exit(1);
   }
 };
@@ -67,17 +66,19 @@ const destroyData = async () => {
   try {
     await Project.deleteMany();
     await User.deleteMany();
-    console.log('Data Destroyed!');
+    console.log('Data Destroyed Successfully!');
     process.exit();
   } catch (error) {
-    console.error(`Error with data destruction: ${error}`);
+    console.error(`Error: ${error}`);
     process.exit(1);
   }
 };
 
-// Check command line arguments to decide which function to run
-if (process.argv[2] === '-d') {
+if (process.argv[2] === '--import') {
+  importData();
+} else if (process.argv[2] === '--destroy') {
   destroyData();
 } else {
-  importData();
+  console.log('Please specify --import or --destroy flag.');
+  process.exit();
 }

@@ -7,13 +7,14 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "seed:import": "node utils/seeder.js",
-    "seed:destroy": "node utils/seeder.js -d"
+    "seed:import": "node utils/seeder.js --import",
+    "seed:destroy": "node utils/seeder.js --destroy"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.12.2",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
     "express": "^5.1.0",

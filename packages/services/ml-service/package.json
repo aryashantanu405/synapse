@@ -1,0 +1,7 @@
+{
+  "name": "ml-service",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": ".\\.venv\\Scripts\\uvicorn main:app --reload --port 8000"
+  }
+}

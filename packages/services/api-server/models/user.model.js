@@ -38,6 +38,10 @@ const userSchema = new mongoose.Schema(
         default: '/path/to/your/placeholder-image.png', // Default placeholder image
       },
     },
+    userArchetype: {
+      type: String,
+      default: 'Not yet analyzed',
+    },
 
     // --- AI/ML Metadata ---
     codingStats: {
