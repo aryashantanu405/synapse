@@ -15,6 +15,7 @@ const app = express();
 const port = 4000;
 
 app.use(cors());
+app.use(express.json());
 
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Backend is running and connected!' });

@@ -1,86 +1,133 @@
-# main.py in your ml-service
+# packages/services/ml-service/main.py
 
-from fastapi import FastAPI
-import joblib
-import pandas as pd
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
-from typing import Dict, Any
+import pandas as pd
+import joblib
+import os
+from typing import Dict, Optional
+import google.generativeai as genai
+from dotenv import load_dotenv
 
-# --- 1. Define the input data structure using Pydantic ---
-# This tells FastAPI what the incoming JSON body should look like.
-# It provides automatic validation and creates interactive API documentation.
-# We expect a dictionary where keys are mistakePatternIds (strings)
-# and values are their occurrenceCounts (integers).
-class UserInputData(BaseModel):
-    mistake_patterns: Dict[str, Any]
+load_dotenv();
 
-# --- 2. Load the trained model, scaler, and columns on startup ---
-# This is a best practice. The assets are loaded once when the server starts,
-# not on every single request, which makes predictions much faster.
-print("Loading model assets...")
+# --- 1. Load All Assets and Configure LLM ---
+models = { "kmeans": None, "scaler": None, "kmeans_columns": None, "random_forest": None, "rf_columns": None }
+MODELS_DIR = '../../ml-training/models'
+
+# Load Scikit-learn models (as before)
 try:
-    kmeans_model = joblib.load('../../ml-training/models/kmeans_model.joblib')
-    scaler = joblib.load('../../ml-training/models/scaler.joblib')
-    model_columns = joblib.load('../../ml-training/models/model_columns.joblib')
-    print("Model assets loaded successfully!")
-except FileNotFoundError as e:
-    print(f"Error loading model assets: {e}")
-    print("Please ensure you have run the training script first.")
-    # In a real production app, you might want the server to exit if assets are missing.
-    kmeans_model = scaler = model_columns = None
+    # ... (loading logic remains the same)
+    models["kmeans"] = joblib.load(os.path.join(MODELS_DIR, 'kmeans_model.joblib'))
+    models["scaler"] = joblib.load(os.path.join(MODELS_DIR, 'scaler.joblib'))
+    models["kmeans_columns"] = joblib.load(os.path.join(MODELS_DIR, 'model_columns.joblib'))
+    models["random_forest"] = joblib.load(os.path.join(MODELS_DIR, 'random_forest_model.joblib'))
+    models["rf_columns"] = joblib.load(os.path.join(MODELS_DIR, 'rf_model_columns.joblib'))
+    print("All ML model assets loaded successfully.")
+except Exception as e:
+    print(f"ERROR loading model assets: {e}")
 
-# This is the mapping from cluster ID to a human-readable name.
-# You should update this based on your own analysis of the cluster centroids.
-cluster_map = {
-    0: "PointerStruggler (C++)",
-    1: "JavaNewbie",
-    2: "Pythonista",
-    3: "LogicLooper",
-    4: "PolyglotPro (Advanced)"
-}
+
+# Configure the Gemini LLM
+try:
+    GOOGLE_API_KEY = os.getenv('GEMINI_API_KEY')
+    if not GOOGLE_API_KEY:
+        print("WARNING: GEMINI_API_KEY not found in .env file. Hint generation will fail.")
+    genai.configure(api_key=GOOGLE_API_KEY)
+    llm = genai.GenerativeModel('gemini-2.0-flash-lite')
+    print("Gemini LLM configured successfully.")
+except Exception as e:
+    llm = None
+    print(f"ERROR configuring Gemini LLM: {e}")
 
 app = FastAPI()
 
+# --- 2. Define API Data Models ---
+
+class ArchetypeInputData(BaseModel):
+    mistake_patterns: Dict[str, int]
+
+class HintInputData(BaseModel):
+    userArchetype: str
+    currentLanguage: str
+    conceptMasteryScore: float
+    timeInSession_minutes: int
+    recentErrorCount: int
+
+class GenerateHintInput(BaseModel):
+    code_snippet: str
+    language: str
+    # This part is optional. The api-server will provide it.
+    context: Optional[HintInputData] = None
+
+
+# (Cluster map remains the same)
+cluster_map = {0: "PointerStruggler (C++)", 1: "JavaNewbie", 2: "Pythonista", 3: "LogicLooper", 4: "PolyglotPro (Advanced)"}
+
+def check_models_loaded():
+    if any(value is None for value in models.values()):
+        raise HTTPException(status_code=500, detail="One or more ML models are not loaded.")
+
+# --- 3. API Endpoints ---
+
 @app.get("/")
-async def root():
-    return {"message": "Synapse ML Service is running!"}
+def read_root(): return {"message": "Synapse ML Service is running!"}
 
-# --- 3. Create the Prediction Endpoint ---
-# This is the equivalent of `app.post('/predict/archetype', ...)` in Express.
 @app.post("/predict/archetype")
-async def predict_archetype(user_data: UserInputData):
-    """
-    Receives a user's mistake patterns, preprocesses them, and predicts
-    their learning archetype using the pre-trained K-Means model.
-    """
-    # THE FIX: Explicitly check if any of the assets are None.
-    # This avoids the "ambiguous truth value" error from Pandas.
-    if kmeans_model is None or scaler is None or model_columns is None:
-        return {"error": "Model assets not loaded. Cannot make a prediction."}
+def predict_archetype(data: ArchetypeInputData):
+    # ... (this function remains the same)
+    check_models_loaded()
+    new_user_df = pd.DataFrame([data.mistake_patterns])
+    new_user_df = new_user_df.reindex(columns=models["kmeans_columns"], fill_value=0)
+    scaled_new_user = models["scaler"].transform(new_user_df)
+    prediction = models["kmeans"].predict(scaled_new_user)
+    cluster_id = int(prediction[0])
+    archetype_name = cluster_map.get(cluster_id, "Unknown Cluster")
+    return {"cluster_id": cluster_id, "archetype": archetype_name}
 
-    # The incoming data is a dictionary, e.g., {'cpp.PointerErrors': 25, ...}
-    new_user_data = user_data.mistake_patterns
-
-    # Preprocess the new data to match the training format
-    # 1. Create a DataFrame from the input dictionary.
-    new_user_df = pd.DataFrame([new_user_data])
-    # 2. Ensure it has the exact same columns in the same order as the training data,
-    #    filling any missing mistake patterns with 0.
-    new_user_df = new_user_df.reindex(columns=model_columns, fill_value=0)
+# --- THE NEW LLM HINT GENERATION ENDPOINT ---
+@app.post("/generate/hint")
+def generate_hint(data: GenerateHintInput):
+    if not llm:
+        raise HTTPException(status_code=500, detail="LLM is not configured. Check API key.")
     
-    # Scale the new data using the SAME scaler from training.
-    scaled_new_user = scaler.transform(new_user_df)
+    predicted_mistake = "(No Mistake)"
+    # --- The Two-Model Logic ---
+    # First, use the Random Forest model if we have context
+    if data.context:
+        check_models_loaded()
+        input_df = pd.DataFrame([data.context.model_dump()])
+        features_encoded = pd.get_dummies(input_df)
+        final_features = features_encoded.reindex(columns=models["rf_columns"], fill_value=0)
+        prediction = models["random_forest"].predict(final_features)
+        predicted_mistake = prediction[0]
 
-    # Make the prediction
-    prediction = kmeans_model.predict(scaled_new_user)
-    predicted_cluster_id = prediction[0]
+    # --- Prompt Engineering ---
+    # Now, build a smart prompt for the LLM
+    system_prompt = f"""
+You are an expert code assistant for the Synapse IDE. Your task is to analyze a code snippet and provide a single, concise, helpful hint for improvement.
+- The user is programming in {data.language}.
+- Your hint should be no more than two sentences.
+- If you find no issues, you MUST respond with only the text "(No Hint)".
+"""
     
-    # Map the numeric ID to a meaningful name
-    predicted_archetype_name = cluster_map.get(predicted_cluster_id, "Unknown Cluster")
+    # This is the key part: we use our first model's prediction to guide the LLM
+    if predicted_mistake and predicted_mistake != "(No Mistake)":
+        system_prompt += f"\n- PREDICTION: This user is highly likely to be making a '{predicted_mistake}' error. Pay special attention to that."
 
-    # Return the final prediction as a JSON response
-    return {
-        "cluster_id": int(predicted_cluster_id),
-        "archetype": predicted_archetype_name
-    }
+    user_prompt = f"Here is the code snippet:\n\n```\n{data.code_snippet}\n```"
+    
+    # --- Call the LLM ---
+    try:
+        response = llm.generate_content([system_prompt, user_prompt])
+        hint = response.text.strip()
+        
+        # Final safety check
+        if not hint or len(hint) > 280:
+             hint = "(No Hint)"
 
+    except Exception as e:
+        print(f"LLM generation failed: {e}")
+        hint = "(No Hint)"
+
+    return {"hint": hint, "predicted_mistake_category": predicted_mistake}

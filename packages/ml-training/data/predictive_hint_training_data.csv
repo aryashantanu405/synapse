@@ -1,0 +1,869 @@
+userArchetype,currentLanguage,conceptMasteryScore,timeInSession_minutes,recentErrorCount,MISTAKE_MADE
+PointerStruggler,cpp,0.15,120,3,cpp.PointerErrors
+JavaNewbie,java,0.20,25,2,java.NullPointerException
+Pythonista,python,0.95,45,0,(No Mistake)
+LogicLooper,python,0.30,90,4,python.OffByOne
+PolyglotPro,cpp,0.90,60,0,(No Mistake)
+PointerStruggler,cpp,0.18,150,5,cpp.MemoryLeaks
+JavaNewbie,java,0.25,10,1,java.TypeMismatch
+LogicLooper,cpp,0.28,180,6,cpp.InfiniteLoop
+Pythonista,python,0.88,20,1,(No Mistake)
+PointerStruggler,cpp,0.22,45,1,cpp.PointerErrors
+JavaNewbie,java,0.15,130,4,java.NullPointerException
+PolyglotPro,python,0.98,90,0,(No Mistake)
+LogicLooper,java,0.35,60,3,java.ArrayIndexOutOfBounds
+PointerStruggler,java,0.70,30,0,(No Mistake)
+JavaNewbie,python,0.60,40,2,python.IndentationError
+Pythonista,cpp,0.85,75,1,(No Mistake)
+PointerStruggler,cpp,0.12,240,8,cpp.MemoryLeaks
+JavaNewbie,java,0.30,5,0,java.StaticMethods
+LogicLooper,python,0.25,150,5,python.OffByOne
+PolyglotPro,java,0.95,120,0,(No Mistake)
+PointerStruggler,cpp,0.20,10,2,cpp.PointerErrors
+JavaNewbie,java,0.22,80,3,java.NullPointerException
+Pythonista,java,0.90,55,0,(No Mistake)
+LogicLooper,cpp,0.33,200,7,cpp.InfiniteLoop
+PointerStruggler,python,0.50,60,1,python.NameError
+JavaNewbie,cpp,0.40,95,4,cpp.OffByOne
+PolyglotPro,cpp,0.99,180,0,(No Mistake)
+LogicLooper,java,0.40,30,2,java.ArrayIndexOutOfBounds
+Pythonista,cpp,0.80,100,0,(No Mistake)
+PointerStruggler,cpp,0.16,190,6,cpp.PointerErrors
+JavaNewbie,java,0.18,35,3,java.NullPointerException
+Pythonista,python,0.92,50,0,(No Mistake)
+LogicLooper,cpp,0.26,160,5,cpp.InfiniteLoop
+PolyglotPro,python,0.96,70,0,(No Mistake)
+PointerStruggler,cpp,0.14,210,7,cpp.MemoryLeaks
+JavaNewbie,java,0.28,15,2,java.TypeMismatch
+Pythonista,java,0.87,65,0,(No Mistake)
+LogicLooper,python,0.32,110,4,python.OffByOne
+PointerStruggler,java,0.65,25,0,(No Mistake)
+JavaNewbie,python,0.55,45,3,python.IndentationError
+PolyglotPro,java,0.93,100,0,(No Mistake)
+LogicLooper,java,0.38,45,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.19,85,4,cpp.PointerErrors
+JavaNewbie,java,0.24,120,4,java.NullPointerException
+Pythonista,cpp,0.82,90,0,(No Mistake)
+LogicLooper,python,0.29,130,5,python.OffByOne
+PolyglotPro,cpp,0.97,150,0,(No Mistake)
+PointerStruggler,cpp,0.17,95,3,cpp.MemoryLeaks
+JavaNewbie,java,0.32,8,1,java.StaticMethods
+Pythonista,python,0.89,35,0,(No Mistake)
+LogicLooper,cpp,0.31,170,6,cpp.InfiniteLoop
+PointerStruggler,python,0.48,55,2,python.NameError
+JavaNewbie,cpp,0.45,105,5,cpp.OffByOne
+PolyglotPro,python,0.94,80,0,(No Mistake)
+LogicLooper,java,0.42,38,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.85,70,0,(No Mistake)
+PointerStruggler,cpp,0.21,125,5,cpp.PointerErrors
+JavaNewbie,java,0.26,65,3,java.NullPointerException
+LogicLooper,python,0.34,140,4,python.OffByOne
+PolyglotPro,java,0.91,110,0,(No Mistake)
+PointerStruggler,cpp,0.13,230,8,cpp.MemoryLeaks
+JavaNewbie,java,0.35,12,2,java.TypeMismatch
+Pythonista,python,0.90,42,0,(No Mistake)
+LogicLooper,cpp,0.27,155,5,cpp.InfiniteLoop
+PointerStruggler,java,0.72,28,0,(No Mistake)
+JavaNewbie,python,0.62,38,2,python.IndentationError
+PolyglotPro,cpp,0.98,165,0,(No Mistake)
+LogicLooper,java,0.36,52,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.23,75,4,cpp.PointerErrors
+JavaNewbie,java,0.29,140,5,java.NullPointerException
+Pythonista,cpp,0.83,95,0,(No Mistake)
+LogicLooper,python,0.31,120,4,python.OffByOne
+PolyglotPro,python,0.95,75,0,(No Mistake)
+PointerStruggler,cpp,0.15,185,6,cpp.MemoryLeaks
+JavaNewbie,java,0.33,7,1,java.StaticMethods
+Pythonista,java,0.88,58,0,(No Mistake)
+LogicLooper,cpp,0.29,190,7,cpp.InfiniteLoop
+PointerStruggler,python,0.52,48,2,python.NameError
+JavaNewbie,cpp,0.42,115,4,cpp.OffByOne
+PolyglotPro,java,0.92,125,0,(No Mistake)
+LogicLooper,java,0.39,42,3,java.ArrayIndexOutOfBounds
+Pythonista,python,0.86,32,0,(No Mistake)
+PointerStruggler,cpp,0.24,105,4,cpp.PointerErrors
+JavaNewbie,java,0.27,90,3,java.NullPointerException
+LogicLooper,python,0.33,135,5,python.OffByOne
+PolyglotPro,cpp,0.96,140,0,(No Mistake)
+PointerStruggler,cpp,0.11,250,9,cpp.MemoryLeaks
+JavaNewbie,java,0.31,18,2,java.TypeMismatch
+Pythonista,cpp,0.84,85,0,(No Mistake)
+LogicLooper,cpp,0.25,175,6,cpp.InfiniteLoop
+PointerStruggler,java,0.68,32,0,(No Mistake)
+JavaNewbie,python,0.58,42,3,python.IndentationError
+PolyglotPro,python,0.93,95,0,(No Mistake)
+LogicLooper,java,0.37,48,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.25,115,5,cpp.PointerErrors
+JavaNewbie,java,0.34,110,4,java.NullPointerException
+Pythonista,java,0.89,62,0,(No Mistake)
+LogicLooper,python,0.35,125,4,python.OffByOne
+PolyglotPro,java,0.94,135,0,(No Mistake)
+PointerStruggler,cpp,0.18,165,5,cpp.MemoryLeaks
+JavaNewbie,java,0.36,9,1,java.StaticMethods
+Pythonista,python,0.91,47,0,(No Mistake)
+LogicLooper,cpp,0.32,205,8,cpp.InfiniteLoop
+PointerStruggler,python,0.54,52,2,python.NameError
+JavaNewbie,cpp,0.47,125,5,cpp.OffByOne
+PolyglotPro,cpp,0.99,155,0,(No Mistake)
+LogicLooper,java,0.41,35,3,java.ArrayIndexOutOfBounds
+Pythonista,cpp,0.81,105,0,(No Mistake)
+PointerStruggler,cpp,0.26,135,6,cpp.PointerErrors
+JavaNewbie,java,0.37,75,3,java.NullPointerException
+LogicLooper,python,0.36,145,5,python.OffByOne
+PolyglotPro,python,0.97,85,0,(No Mistake)
+PointerStruggler,cpp,0.12,270,10,cpp.MemoryLeaks
+JavaNewbie,java,0.38,22,2,java.TypeMismatch
+Pythonista,java,0.86,72,0,(No Mistake)
+LogicLooper,cpp,0.30,195,7,cpp.InfiniteLoop
+PointerStruggler,java,0.75,29,0,(No Mistake)
+JavaNewbie,python,0.64,35,2,python.IndentationError
+PolyglotPro,java,0.95,145,0,(No Mistake)
+LogicLooper,java,0.43,40,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.27,145,5,cpp.PointerErrors
+JavaNewbie,java,0.39,95,4,java.NullPointerException
+Pythonista,python,0.93,52,0,(No Mistake)
+LogicLooper,python,0.37,115,4,python.OffByOne
+PolyglotPro,cpp,0.98,170,0,(No Mistake)
+PointerStruggler,cpp,0.19,155,4,cpp.MemoryLeaks
+JavaNewbie,java,0.40,6,1,java.StaticMethods
+Pythonista,cpp,0.87,98,0,(No Mistake)
+LogicLooper,cpp,0.34,215,8,cpp.InfiniteLoop
+PointerStruggler,python,0.56,45,2,python.NameError
+JavaNewbie,cpp,0.49,135,5,cpp.OffByOne
+PolyglotPro,python,0.96,105,0,(No Mistake)
+LogicLooper,java,0.44,33,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.84,78,0,(No Mistake)
+PointerStruggler,cpp,0.28,175,6,cpp.PointerErrors
+JavaNewbie,java,0.41,85,3,java.NullPointerException
+LogicLooper,python,0.38,155,5,python.OffByOne
+PolyglotPro,java,0.93,160,0,(No Mistake)
+PointerStruggler,cpp,0.14,290,9,cpp.MemoryLeaks
+JavaNewbie,java,0.42,14,2,java.TypeMismatch
+Pythonista,python,0.88,44,0,(No Mistake)
+LogicLooper,cpp,0.35,225,8,cpp.InfiniteLoop
+PointerStruggler,java,0.78,26,0,(No Mistake)
+JavaNewbie,python,0.66,32,3,python.IndentationError
+PolyglotPro,cpp,0.97,185,0,(No Mistake)
+LogicLooper,java,0.45,37,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.29,195,6,cpp.PointerErrors
+JavaNewbie,java,0.43,100,4,java.NullPointerException
+Pythonista,cpp,0.89,108,0,(No Mistake)
+LogicLooper,python,0.39,165,5,python.OffByOne
+PolyglotPro,python,0.95,115,0,(No Mistake)
+PointerStruggler,cpp,0.20,135,4,cpp.MemoryLeaks
+JavaNewbie,java,0.44,11,1,java.StaticMethods
+Pythonista,java,0.91,68,0,(No Mistake)
+LogicLooper,cpp,0.36,235,9,cpp.InfiniteLoop
+PointerStruggler,python,0.58,42,2,python.NameError
+JavaNewbie,cpp,0.51,145,5,cpp.OffByOne
+PolyglotPro,java,0.94,175,0,(No Mistake)
+LogicLooper,java,0.46,30,3,java.ArrayIndexOutOfBounds
+Pythonista,python,0.85,38,0,(No Mistake)
+PointerStruggler,cpp,0.30,205,7,cpp.PointerErrors
+JavaNewbie,java,0.45,70,3,java.NullPointerException
+LogicLooper,python,0.40,175,5,python.OffByOne
+PolyglotPro,cpp,0.99,195,0,(No Mistake)
+PointerStruggler,cpp,0.16,310,10,cpp.MemoryLeaks
+JavaNewbie,java,0.46,16,2,java.TypeMismatch
+Pythonista,cpp,0.90,112,0,(No Mistake)
+LogicLooper,cpp,0.37,245,9,cpp.InfiniteLoop
+PointerStruggler,java,0.80,24,0,(No Mistake)
+JavaNewbie,python,0.68,28,2,python.IndentationError
+PolyglotPro,python,0.98,125,0,(No Mistake)
+LogicLooper,java,0.47,28,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.31,215,6,cpp.PointerErrors
+JavaNewbie,java,0.47,105,4,java.NullPointerException
+Pythonista,java,0.92,74,0,(No Mistake)
+LogicLooper,python,0.41,185,5,python.OffByOne
+PolyglotPro,java,0.96,190,0,(No Mistake)
+PointerStruggler,cpp,0.22,145,5,cpp.MemoryLeaks
+JavaNewbie,java,0.48,13,1,java.StaticMethods
+Pythonista,python,0.94,56,0,(No Mistake)
+LogicLooper,cpp,0.38,255,10,cpp.InfiniteLoop
+PointerStruggler,python,0.60,38,2,python.NameError
+JavaNewbie,cpp,0.53,155,5,cpp.OffByOne
+PolyglotPro,cpp,0.98,205,0,(No Mistake)
+LogicLooper,java,0.48,25,3,java.ArrayIndexOutOfBounds
+Pythonista,cpp,0.86,118,0,(No Mistake)
+PointerStruggler,cpp,0.32,225,7,cpp.PointerErrors
+JavaNewbie,java,0.49,80,3,java.NullPointerException
+LogicLooper,python,0.42,195,5,python.OffByOne
+PolyglotPro,python,0.97,135,0,(No Mistake)
+PointerStruggler,cpp,0.17,330,11,cpp.MemoryLeaks
+JavaNewbie,java,0.50,20,2,java.TypeMismatch
+Pythonista,java,0.87,82,0,(No Mistake)
+LogicLooper,cpp,0.39,265,10,cpp.InfiniteLoop
+PointerStruggler,java,0.82,22,0,(No Mistake)
+JavaNewbie,python,0.70,25,3,python.IndentationError
+PolyglotPro,java,0.95,200,0,(No Mistake)
+LogicLooper,java,0.49,22,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.33,235,6,cpp.PointerErrors
+JavaNewbie,java,0.51,115,4,java.NullPointerException
+Pythonista,python,0.89,48,0,(No Mistake)
+LogicLooper,python,0.43,205,5,python.OffByOne
+PolyglotPro,cpp,0.99,215,0,(No Mistake)
+PointerStruggler,cpp,0.23,155,4,cpp.MemoryLeaks
+JavaNewbie,java,0.52,15,1,java.StaticMethods
+Pythonista,cpp,0.88,122,0,(No Mistake)
+LogicLooper,cpp,0.40,275,11,cpp.InfiniteLoop
+PointerStruggler,python,0.62,35,2,python.NameError
+JavaNewbie,cpp,0.55,165,5,cpp.OffByOne
+PolyglotPro,python,0.96,145,0,(No Mistake)
+LogicLooper,java,0.50,20,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.85,86,0,(No Mistake)
+PointerStruggler,cpp,0.34,245,7,cpp.PointerErrors
+JavaNewbie,java,0.53,90,3,java.NullPointerException
+LogicLooper,python,0.44,215,5,python.OffByOne
+PolyglotPro,java,0.97,210,0,(No Mistake)
+PointerStruggler,cpp,0.35,265,7,cpp.PointerErrors
+JavaNewbie,java,0.54,65,3,java.NullPointerException
+Pythonista,python,0.90,42,0,(No Mistake)
+LogicLooper,cpp,0.41,285,11,cpp.InfiniteLoop
+PolyglotPro,java,0.98,220,0,(No Mistake)
+PointerStruggler,cpp,0.24,175,5,cpp.MemoryLeaks
+JavaNewbie,java,0.55,18,2,java.TypeMismatch
+Pythonista,cpp,0.89,128,0,(No Mistake)
+LogicLooper,python,0.45,225,5,python.OffByOne
+PointerStruggler,java,0.84,20,0,(No Mistake)
+JavaNewbie,python,0.72,22,3,python.IndentationError
+PolyglotPro,python,0.99,155,0,(No Mistake)
+LogicLooper,java,0.51,18,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.36,255,6,cpp.PointerErrors
+JavaNewbie,java,0.56,125,4,java.NullPointerException
+Pythonista,java,0.93,78,0,(No Mistake)
+LogicLooper,python,0.46,235,5,python.OffByOne
+PolyglotPro,cpp,0.97,225,0,(No Mistake)
+PointerStruggler,cpp,0.25,195,4,cpp.MemoryLeaks
+JavaNewbie,java,0.57,17,1,java.StaticMethods
+Pythonista,python,0.91,54,0,(No Mistake)
+LogicLooper,cpp,0.42,295,12,cpp.InfiniteLoop
+PointerStruggler,python,0.64,32,2,python.NameError
+JavaNewbie,cpp,0.57,175,5,cpp.OffByOne
+PolyglotPro,java,0.96,230,0,(No Mistake)
+LogicLooper,java,0.52,16,3,java.ArrayIndexOutOfBounds
+Pythonista,cpp,0.87,132,0,(No Mistake)
+PointerStruggler,cpp,0.37,275,7,cpp.PointerErrors
+JavaNewbie,java,0.58,95,3,java.NullPointerException
+LogicLooper,python,0.47,245,5,python.OffByOne
+PolyglotPro,python,0.98,165,0,(No Mistake)
+PointerStruggler,cpp,0.18,350,12,cpp.MemoryLeaks
+JavaNewbie,java,0.59,24,2,java.TypeMismatch
+Pythonista,java,0.88,84,0,(No Mistake)
+LogicLooper,cpp,0.43,305,12,cpp.InfiniteLoop
+PointerStruggler,java,0.86,18,0,(No Mistake)
+JavaNewbie,python,0.74,20,2,python.IndentationError
+PolyglotPro,cpp,0.99,235,0,(No Mistake)
+LogicLooper,java,0.53,14,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.38,285,6,cpp.PointerErrors
+JavaNewbie,java,0.60,135,4,java.NullPointerException
+Pythonista,python,0.92,58,0,(No Mistake)
+LogicLooper,python,0.48,255,5,python.OffByOne
+PolyglotPro,java,0.95,240,0,(No Mistake)
+PointerStruggler,cpp,0.26,215,5,cpp.MemoryLeaks
+JavaNewbie,java,0.61,19,1,java.StaticMethods
+Pythonista,cpp,0.86,138,0,(No Mistake)
+LogicLooper,cpp,0.44,315,13,cpp.InfiniteLoop
+PointerStruggler,python,0.66,30,2,python.NameError
+JavaNewbie,cpp,0.59,185,5,cpp.OffByOne
+PolyglotPro,python,0.97,175,0,(No Mistake)
+LogicLooper,java,0.54,12,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.84,88,0,(No Mistake)
+PointerStruggler,cpp,0.39,295,7,cpp.PointerErrors
+JavaNewbie,java,0.62,105,3,java.NullPointerException
+LogicLooper,python,0.49,265,5,python.OffByOne
+PolyglotPro,cpp,0.98,245,0,(No Mistake)
+PointerStruggler,cpp,0.19,370,13,cpp.MemoryLeaks
+JavaNewbie,java,0.63,26,2,java.TypeMismatch
+Pythonista,python,0.93,62,0,(No Mistake)
+LogicLooper,cpp,0.45,325,13,cpp.InfiniteLoop
+PointerStruggler,java,0.88,16,0,(No Mistake)
+JavaNewbie,python,0.76,18,3,python.IndentationError
+PolyglotPro,java,0.94,250,0,(No Mistake)
+LogicLooper,java,0.55,10,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.40,305,6,cpp.PointerErrors
+JavaNewbie,java,0.64,145,4,java.NullPointerException
+Pythonista,cpp,0.85,142,0,(No Mistake)
+LogicLooper,python,0.50,275,5,python.OffByOne
+PolyglotPro,python,0.96,185,0,(No Mistake)
+PointerStruggler,cpp,0.27,235,4,cpp.MemoryLeaks
+JavaNewbie,java,0.65,21,1,java.StaticMethods
+Pythonista,java,0.89,92,0,(No Mistake)
+LogicLooper,cpp,0.46,335,14,cpp.InfiniteLoop
+PointerStruggler,python,0.68,28,2,python.NameError
+JavaNewbie,cpp,0.61,195,5,cpp.OffByOne
+PolyglotPro,cpp,0.99,255,0,(No Mistake)
+LogicLooper,java,0.56,8,3,java.ArrayIndexOutOfBounds
+Pythonista,python,0.94,66,0,(No Mistake)
+PointerStruggler,cpp,0.41,315,7,cpp.PointerErrors
+JavaNewbie,java,0.66,115,3,java.NullPointerException
+LogicLooper,python,0.51,285,5,python.OffByOne
+PolyglotPro,java,0.93,260,0,(No Mistake)
+PointerStruggler,cpp,0.20,390,14,cpp.MemoryLeaks
+JavaNewbie,java,0.67,28,2,java.TypeMismatch
+Pythonista,cpp,0.83,148,0,(No Mistake)
+LogicLooper,cpp,0.47,345,14,cpp.InfiniteLoop
+PointerStruggler,java,0.90,14,0,(No Mistake)
+JavaNewbie,python,0.78,16,2,python.IndentationError
+PolyglotPro,python,0.95,195,0,(No Mistake)
+LogicLooper,java,0.57,6,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.42,325,6,cpp.PointerErrors
+JavaNewbie,java,0.68,155,4,java.NullPointerException
+Pythonista,java,0.90,96,0,(No Mistake)
+LogicLooper,python,0.52,295,5,python.OffByOne
+PolyglotPro,cpp,0.97,265,0,(No Mistake)
+PointerStruggler,cpp,0.28,255,5,cpp.MemoryLeaks
+JavaNewbie,java,0.69,23,1,java.StaticMethods
+Pythonista,python,0.95,70,0,(No Mistake)
+LogicLooper,cpp,0.48,355,15,cpp.InfiniteLoop
+PointerStruggler,python,0.70,26,2,python.NameError
+JavaNewbie,cpp,0.63,205,5,cpp.OffByOne
+PolyglotPro,java,0.92,270,0,(No Mistake)
+LogicLooper,java,0.58,4,3,java.ArrayIndexOutOfBounds
+Pythonista,cpp,0.81,152,0,(No Mistake)
+PointerStruggler,cpp,0.43,335,7,cpp.PointerErrors
+JavaNewbie,java,0.70,125,3,java.NullPointerException
+LogicLooper,python,0.53,305,5,python.OffByOne
+PolyglotPro,python,0.94,205,0,(No Mistake)
+PointerStruggler,cpp,0.21,410,15,cpp.MemoryLeaks
+JavaNewbie,java,0.71,30,2,java.TypeMismatch
+Pythonista,java,0.87,100,0,(No Mistake)
+LogicLooper,cpp,0.49,365,15,cpp.InfiniteLoop
+PointerStruggler,java,0.92,12,0,(No Mistake)
+JavaNewbie,python,0.80,14,3,python.IndentationError
+PolyglotPro,cpp,0.96,275,0,(No Mistake)
+LogicLooper,java,0.59,2,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.44,345,6,cpp.PointerErrors
+JavaNewbie,java,0.72,165,4,java.NullPointerException
+Pythonista,python,0.96,74,0,(No Mistake)
+LogicLooper,python,0.54,315,5,python.OffByOne
+PolyglotPro,java,0.91,280,0,(No Mistake)
+PointerStruggler,cpp,0.29,275,4,cpp.MemoryLeaks
+JavaNewbie,java,0.73,25,1,java.StaticMethods
+Pythonista,cpp,0.79,158,0,(No Mistake)
+LogicLooper,cpp,0.50,375,16,cpp.InfiniteLoop
+PointerStruggler,python,0.72,24,2,python.NameError
+JavaNewbie,cpp,0.65,215,5,cpp.OffByOne
+PolyglotPro,python,0.93,215,0,(No Mistake)
+LogicLooper,java,0.60,0,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.85,104,0,(No Mistake)
+PointerStruggler,cpp,0.45,355,7,cpp.PointerErrors
+JavaNewbie,java,0.74,135,3,java.NullPointerException
+LogicLooper,python,0.55,325,5,python.OffByOne
+PolyglotPro,cpp,0.95,285,0,(No Mistake)
+PointerStruggler,cpp,0.22,430,16,cpp.MemoryLeaks
+JavaNewbie,java,0.75,32,2,java.TypeMismatch
+Pythonista,python,0.97,78,0,(No Mistake)
+LogicLooper,cpp,0.51,385,16,cpp.InfiniteLoop
+PointerStruggler,java,0.94,10,0,(No Mistake)
+JavaNewbie,python,0.82,12,2,python.IndentationError
+PolyglotPro,java,0.90,290,0,(No Mistake)
+LogicLooper,java,0.61,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.46,365,6,cpp.PointerErrors
+JavaNewbie,java,0.76,175,4,java.NullPointerException
+Pythonista,cpp,0.77,162,0,(No Mistake)
+LogicLooper,python,0.56,335,5,python.OffByOne
+PolyglotPro,python,0.92,225,0,(No Mistake)
+PointerStruggler,cpp,0.30,295,5,cpp.MemoryLeaks
+JavaNewbie,java,0.77,27,1,java.StaticMethods
+Pythonista,java,0.82,108,0,(No Mistake)
+LogicLooper,cpp,0.52,395,17,cpp.InfiniteLoop
+PointerStruggler,python,0.74,22,2,python.NameError
+JavaNewbie,cpp,0.67,225,5,cpp.OffByOne
+PolyglotPro,cpp,0.94,295,0,(No Mistake)
+LogicLooper,java,0.62,0,3,java.ArrayIndexOutOfBounds
+Pythonista,python,0.98,82,0,(No Mistake)
+PointerStruggler,cpp,0.47,375,7,cpp.PointerErrors
+JavaNewbie,java,0.78,145,3,java.NullPointerException
+LogicLooper,python,0.57,345,5,python.OffByOne
+PolyglotPro,java,0.89,300,0,(No Mistake)
+PointerStruggler,cpp,0.23,450,17,cpp.MemoryLeaks
+JavaNewbie,java,0.79,34,2,java.TypeMismatch
+Pythonista,cpp,0.75,168,0,(No Mistake)
+LogicLooper,cpp,0.53,405,17,cpp.InfiniteLoop
+PointerStruggler,java,0.96,8,0,(No Mistake)
+JavaNewbie,python,0.84,10,3,python.IndentationError
+PolyglotPro,python,0.91,235,0,(No Mistake)
+LogicLooper,java,0.63,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.48,385,6,cpp.PointerErrors
+JavaNewbie,java,0.80,185,4,java.NullPointerException
+Pythonista,java,0.80,112,0,(No Mistake)
+LogicLooper,python,0.58,355,5,python.OffByOne
+PolyglotPro,cpp,0.93,305,0,(No Mistake)
+PointerStruggler,cpp,0.31,315,4,cpp.MemoryLeaks
+JavaNewbie,java,0.81,29,1,java.StaticMethods
+Pythonista,python,0.99,86,0,(No Mistake)
+LogicLooper,cpp,0.54,415,18,cpp.InfiniteLoop
+PointerStruggler,python,0.76,20,2,python.NameError
+JavaNewbie,cpp,0.69,235,5,cpp.OffByOne
+PolyglotPro,java,0.88,310,0,(No Mistake)
+LogicLooper,java,0.64,0,3,java.ArrayIndexOutOfBounds
+Pythonista,cpp,0.73,172,0,(No Mistake)
+PointerStruggler,cpp,0.49,395,7,cpp.PointerErrors
+JavaNewbie,java,0.82,155,3,java.NullPointerException
+LogicLooper,python,0.59,365,5,python.OffByOne
+PolyglotPro,python,0.90,245,0,(No Mistake)
+PointerStruggler,cpp,0.24,470,18,cpp.MemoryLeaks
+JavaNewbie,java,0.83,36,2,java.TypeMismatch
+Pythonista,java,0.78,116,0,(No Mistake)
+LogicLooper,cpp,0.55,425,18,cpp.InfiniteLoop
+PointerStruggler,java,0.98,6,0,(No Mistake)
+JavaNewbie,python,0.86,8,2,python.IndentationError
+PolyglotPro,cpp,0.92,315,0,(No Mistake)
+LogicLooper,java,0.65,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.50,405,6,cpp.PointerErrors
+JavaNewbie,java,0.84,195,4,java.NullPointerException
+Pythonista,python,1.00,90,0,(No Mistake)
+LogicLooper,python,0.60,375,5,python.OffByOne
+PolyglotPro,java,0.87,320,0,(No Mistake)
+PointerStruggler,cpp,0.32,335,5,cpp.MemoryLeaks
+JavaNewbie,java,0.85,31,1,java.StaticMethods
+Pythonista,cpp,0.71,178,0,(No Mistake)
+LogicLooper,cpp,0.56,435,19,cpp.InfiniteLoop
+PointerStruggler,python,0.78,18,2,python.NameError
+JavaNewbie,cpp,0.71,245,5,cpp.OffByOne
+PolyglotPro,python,0.89,255,0,(No Mistake)
+LogicLooper,java,0.66,0,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.76,120,0,(No Mistake)
+PointerStruggler,cpp,0.51,415,7,cpp.PointerErrors
+JavaNewbie,java,0.86,165,3,java.NullPointerException
+LogicLooper,python,0.61,385,5,python.OffByOne
+PolyglotPro,cpp,0.91,325,0,(No Mistake)
+PointerStruggler,cpp,0.25,490,19,cpp.MemoryLeaks
+JavaNewbie,java,0.87,38,2,java.TypeMismatch
+Pythonista,python,0.98,94,0,(No Mistake)
+LogicLooper,cpp,0.57,445,19,cpp.InfiniteLoop
+PointerStruggler,java,1.00,4,0,(No Mistake)
+JavaNewbie,python,0.88,6,3,python.IndentationError
+PolyglotPro,java,0.86,330,0,(No Mistake)
+LogicLooper,java,0.67,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.52,425,6,cpp.PointerErrors
+JavaNewbie,java,0.88,205,4,java.NullPointerException
+Pythonista,cpp,0.69,184,0,(No Mistake)
+LogicLooper,python,0.62,395,5,python.OffByOne
+PolyglotPro,python,0.88,265,0,(No Mistake)
+PointerStruggler,cpp,0.33,355,4,cpp.MemoryLeaks
+JavaNewbie,java,0.89,33,1,java.StaticMethods
+Pythonista,java,0.74,124,0,(No Mistake)
+LogicLooper,cpp,0.58,455,20,cpp.InfiniteLoop
+PointerStruggler,python,0.80,16,2,python.NameError
+JavaNewbie,cpp,0.73,255,5,cpp.OffByOne
+PolyglotPro,cpp,0.90,335,0,(No Mistake)
+LogicLooper,java,0.68,0,3,java.ArrayIndexOutOfBounds
+Pythonista,python,0.96,98,0,(No Mistake)
+PointerStruggler,cpp,0.53,435,7,cpp.PointerErrors
+JavaNewbie,java,0.90,175,3,java.NullPointerException
+LogicLooper,python,0.63,405,5,python.OffByOne
+PolyglotPro,java,0.85,340,0,(No Mistake)
+PointerStruggler,cpp,0.54,445,7,cpp.PointerErrors
+JavaNewbie,java,0.91,40,2,java.TypeMismatch
+Pythonista,python,0.94,102,0,(No Mistake)
+LogicLooper,cpp,0.59,465,20,cpp.InfiniteLoop
+PolyglotPro,python,0.87,275,0,(No Mistake)
+PointerStruggler,cpp,0.34,375,5,cpp.MemoryLeaks
+JavaNewbie,java,0.92,35,1,java.StaticMethods
+Pythonista,java,0.72,128,0,(No Mistake)
+LogicLooper,python,0.64,415,5,python.OffByOne
+PointerStruggler,java,0.95,2,0,(No Mistake)
+JavaNewbie,python,0.90,4,2,python.IndentationError
+PolyglotPro,cpp,0.89,345,0,(No Mistake)
+LogicLooper,java,0.69,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.55,455,6,cpp.PointerErrors
+JavaNewbie,java,0.93,215,4,java.NullPointerException
+Pythonista,cpp,0.67,190,0,(No Mistake)
+LogicLooper,python,0.65,425,5,python.OffByOne
+PolyglotPro,java,0.84,350,0,(No Mistake)
+PointerStruggler,cpp,0.35,395,4,cpp.MemoryLeaks
+JavaNewbie,java,0.94,37,1,java.StaticMethods
+Pythonista,python,0.92,106,0,(No Mistake)
+LogicLooper,cpp,0.60,475,21,cpp.InfiniteLoop
+PointerStruggler,python,0.82,14,2,python.NameError
+JavaNewbie,cpp,0.75,265,5,cpp.OffByOne
+PolyglotPro,python,0.86,285,0,(No Mistake)
+LogicLooper,java,0.70,0,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.70,132,0,(No Mistake)
+PointerStruggler,cpp,0.56,465,7,cpp.PointerErrors
+JavaNewbie,java,0.95,185,3,java.NullPointerException
+LogicLooper,python,0.66,435,5,python.OffByOne
+PolyglotPro,cpp,0.88,355,0,(No Mistake)
+PointerStruggler,cpp,0.26,510,20,cpp.MemoryLeaks
+JavaNewbie,java,0.96,42,2,java.TypeMismatch
+Pythonista,java,0.68,136,0,(No Mistake)
+LogicLooper,cpp,0.61,485,21,cpp.InfiniteLoop
+PointerStruggler,java,0.93,0,0,(No Mistake)
+JavaNewbie,python,0.92,2,2,python.IndentationError
+PolyglotPro,java,0.83,360,0,(No Mistake)
+LogicLooper,java,0.71,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.57,475,6,cpp.PointerErrors
+JavaNewbie,java,0.97,225,4,java.NullPointerException
+Pythonista,python,0.90,110,0,(No Mistake)
+LogicLooper,python,0.67,445,5,python.OffByOne
+PolyglotPro,python,0.85,295,0,(No Mistake)
+PointerStruggler,cpp,0.36,415,5,cpp.MemoryLeaks
+JavaNewbie,java,0.98,39,1,java.StaticMethods
+Pythonista,cpp,0.65,196,0,(No Mistake)
+LogicLooper,cpp,0.62,495,22,cpp.InfiniteLoop
+PointerStruggler,python,0.84,12,2,python.NameError
+JavaNewbie,cpp,0.77,275,5,cpp.OffByOne
+PolyglotPro,cpp,0.87,365,0,(No Mistake)
+LogicLooper,java,0.72,0,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.66,140,0,(No Mistake)
+PointerStruggler,cpp,0.58,485,7,cpp.PointerErrors
+JavaNewbie,java,0.99,195,3,java.NullPointerException
+LogicLooper,python,0.68,455,5,python.OffByOne
+PolyglotPro,java,0.82,370,0,(No Mistake)
+PointerStruggler,cpp,0.27,530,21,cpp.MemoryLeaks
+JavaNewbie,java,1.00,44,2,java.TypeMismatch
+Pythonista,python,0.88,114,0,(No Mistake)
+LogicLooper,cpp,0.63,505,22,cpp.InfiniteLoop
+PointerStruggler,java,0.91,0,0,(No Mistake)
+JavaNewbie,python,0.94,0,2,python.IndentationError
+PolyglotPro,python,0.84,305,0,(No Mistake)
+LogicLooper,java,0.73,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.59,495,6,cpp.PointerErrors
+JavaNewbie,java,0.98,235,4,java.NullPointerException
+Pythonista,cpp,0.63,202,0,(No Mistake)
+LogicLooper,python,0.69,465,5,python.OffByOne
+PolyglotPro,cpp,0.86,375,0,(No Mistake)
+PointerStruggler,cpp,0.37,435,4,cpp.MemoryLeaks
+JavaNewbie,java,0.97,41,1,java.StaticMethods
+Pythonista,java,0.64,144,0,(No Mistake)
+LogicLooper,cpp,0.64,515,23,cpp.InfiniteLoop
+PointerStruggler,python,0.86,10,2,python.NameError
+JavaNewbie,cpp,0.79,285,5,cpp.OffByOne
+PolyglotPro,java,0.81,380,0,(No Mistake)
+LogicLooper,java,0.74,0,3,java.ArrayIndexOutOfBounds
+Pythonista,python,0.86,118,0,(No Mistake)
+PointerStruggler,cpp,0.60,505,7,cpp.PointerErrors
+JavaNewbie,java,0.96,205,3,java.NullPointerException
+LogicLooper,python,0.70,475,5,python.OffByOne
+PolyglotPro,python,0.83,315,0,(No Mistake)
+PointerStruggler,cpp,0.28,550,22,cpp.MemoryLeaks
+JavaNewbie,java,0.95,46,2,java.TypeMismatch
+Pythonista,cpp,0.61,208,0,(No Mistake)
+LogicLooper,cpp,0.65,525,23,cpp.InfiniteLoop
+PointerStruggler,java,0.89,0,0,(No Mistake)
+JavaNewbie,python,0.96,0,2,python.IndentationError
+PolyglotPro,cpp,0.85,385,0,(No Mistake)
+LogicLooper,java,0.75,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.61,515,6,cpp.PointerErrors
+JavaNewbie,java,0.94,245,4,java.NullPointerException
+Pythonista,java,0.62,148,0,(No Mistake)
+LogicLooper,python,0.71,485,5,python.OffByOne
+PolyglotPro,java,0.80,390,0,(No Mistake)
+PointerStruggler,cpp,0.38,455,5,cpp.MemoryLeaks
+JavaNewbie,java,0.93,43,1,java.StaticMethods
+Pythonista,python,0.84,122,0,(No Mistake)
+LogicLooper,cpp,0.66,535,24,cpp.InfiniteLoop
+PointerStruggler,python,0.88,8,2,python.NameError
+JavaNewbie,cpp,0.81,295,5,cpp.OffByOne
+PolyglotPro,python,0.82,325,0,(No Mistake)
+LogicLooper,java,0.76,0,3,java.ArrayIndexOutOfBounds
+Pythonista,cpp,0.59,214,0,(No Mistake)
+PointerStruggler,cpp,0.62,525,7,cpp.PointerErrors
+JavaNewbie,java,0.92,215,3,java.NullPointerException
+LogicLooper,python,0.72,495,5,python.OffByOne
+PolyglotPro,cpp,0.84,395,0,(No Mistake)
+PointerStruggler,cpp,0.29,570,23,cpp.MemoryLeaks
+JavaNewbie,java,0.91,48,2,java.TypeMismatch
+Pythonista,java,0.60,152,0,(No Mistake)
+LogicLooper,cpp,0.67,545,24,cpp.InfiniteLoop
+PointerStruggler,java,0.87,0,0,(No Mistake)
+JavaNewbie,python,0.98,0,2,python.IndentationError
+PolyglotPro,java,0.79,400,0,(No Mistake)
+LogicLooper,java,0.77,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.63,535,6,cpp.PointerErrors
+JavaNewbie,java,0.90,255,4,java.NullPointerException
+Pythonista,python,0.82,126,0,(No Mistake)
+LogicLooper,python,0.73,505,5,python.OffByOne
+PolyglotPro,python,0.81,335,0,(No Mistake)
+PointerStruggler,cpp,0.39,475,4,cpp.MemoryLeaks
+JavaNewbie,java,0.89,45,1,java.StaticMethods
+Pythonista,cpp,0.57,220,0,(No Mistake)
+LogicLooper,cpp,0.68,555,25,cpp.InfiniteLoop
+PointerStruggler,python,0.90,6,2,python.NameError
+JavaNewbie,cpp,0.83,305,5,cpp.OffByOne
+PolyglotPro,cpp,0.83,405,0,(No Mistake)
+LogicLooper,java,0.78,0,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.58,156,0,(No Mistake)
+PointerStruggler,cpp,0.64,545,7,cpp.PointerErrors
+JavaNewbie,java,0.88,225,3,java.NullPointerException
+LogicLooper,python,0.74,515,5,python.OffByOne
+PolyglotPro,java,0.78,410,0,(No Mistake)
+PointerStruggler,cpp,0.30,590,24,cpp.MemoryLeaks
+JavaNewbie,java,0.87,50,2,java.TypeMismatch
+Pythonista,python,0.80,130,0,(No Mistake)
+LogicLooper,cpp,0.69,565,25,cpp.InfiniteLoop
+PointerStruggler,java,0.85,0,0,(No Mistake)
+JavaNewbie,python,1.00,0,2,python.IndentationError
+PolyglotPro,python,0.80,345,0,(No Mistake)
+LogicLooper,java,0.79,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.65,555,6,cpp.PointerErrors
+JavaNewbie,java,0.86,265,4,java.NullPointerException
+Pythonista,cpp,0.55,226,0,(No Mistake)
+LogicLooper,python,0.75,525,5,python.OffByOne
+PolyglotPro,cpp,0.82,415,0,(No Mistake)
+PointerStruggler,cpp,0.40,495,5,cpp.MemoryLeaks
+JavaNewbie,java,0.85,47,1,java.StaticMethods
+Pythonista,java,0.56,160,0,(No Mistake)
+LogicLooper,cpp,0.70,575,26,cpp.InfiniteLoop
+PointerStruggler,python,0.92,4,2,python.NameError
+JavaNewbie,cpp,0.85,315,5,cpp.OffByOne
+PolyglotPro,java,0.77,420,0,(No Mistake)
+LogicLooper,java,0.80,0,3,java.ArrayIndexOutOfBounds
+Pythonista,python,0.78,134,0,(No Mistake)
+PointerStruggler,cpp,0.66,565,7,cpp.PointerErrors
+JavaNewbie,java,0.84,235,3,java.NullPointerException
+LogicLooper,python,0.76,535,5,python.OffByOne
+PolyglotPro,python,0.79,355,0,(No Mistake)
+PointerStruggler,cpp,0.31,610,25,cpp.MemoryLeaks
+JavaNewbie,java,0.83,52,2,java.TypeMismatch
+Pythonista,cpp,0.53,232,0,(No Mistake)
+LogicLooper,cpp,0.71,585,26,cpp.InfiniteLoop
+PointerStruggler,java,0.83,0,0,(No Mistake)
+JavaNewbie,python,0.99,0,2,python.IndentationError
+PolyglotPro,cpp,0.81,425,0,(No Mistake)
+LogicLooper,java,0.81,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.67,575,6,cpp.PointerErrors
+JavaNewbie,java,0.82,275,4,java.NullPointerException
+Pythonista,java,0.54,164,0,(No Mistake)
+LogicLooper,python,0.77,545,5,python.OffByOne
+PolyglotPro,java,0.76,430,0,(No Mistake)
+PointerStruggler,cpp,0.41,515,4,cpp.MemoryLeaks
+JavaNewbie,java,0.81,49,1,java.StaticMethods
+Pythonista,python,0.76,138,0,(No Mistake)
+LogicLooper,cpp,0.72,595,27,cpp.InfiniteLoop
+PointerStruggler,python,0.94,2,2,python.NameError
+JavaNewbie,cpp,0.87,325,5,cpp.OffByOne
+PolyglotPro,python,0.78,365,0,(No Mistake)
+LogicLooper,java,0.82,0,3,java.ArrayIndexOutOfBounds
+Pythonista,cpp,0.51,238,0,(No Mistake)
+PointerStruggler,cpp,0.68,585,7,cpp.PointerErrors
+JavaNewbie,java,0.80,245,3,java.NullPointerException
+LogicLooper,python,0.78,555,5,python.OffByOne
+PolyglotPro,cpp,0.80,435,0,(No Mistake)
+PointerStruggler,cpp,0.32,630,26,cpp.MemoryLeaks
+JavaNewbie,java,0.79,54,2,java.TypeMismatch
+Pythonista,java,0.52,168,0,(No Mistake)
+LogicLooper,cpp,0.73,605,27,cpp.InfiniteLoop
+PointerStruggler,java,0.81,0,0,(No Mistake)
+JavaNewbie,python,0.97,0,2,python.IndentationError
+PolyglotPro,java,0.75,440,0,(No Mistake)
+LogicLooper,java,0.83,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.69,595,6,cpp.PointerErrors
+JavaNewbie,java,0.78,285,4,java.NullPointerException
+Pythonista,python,0.74,142,0,(No Mistake)
+LogicLooper,python,0.79,565,5,python.OffByOne
+PolyglotPro,python,0.77,375,0,(No Mistake)
+PointerStruggler,cpp,0.42,535,5,cpp.MemoryLeaks
+JavaNewbie,java,0.77,51,1,java.StaticMethods
+Pythonista,cpp,0.49,244,0,(No Mistake)
+LogicLooper,cpp,0.74,615,28,cpp.InfiniteLoop
+PointerStruggler,python,0.96,0,2,python.NameError
+JavaNewbie,cpp,0.89,335,5,cpp.OffByOne
+PolyglotPro,cpp,0.79,445,0,(No Mistake)
+LogicLooper,java,0.84,0,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.50,172,0,(No Mistake)
+PointerStruggler,cpp,0.70,605,7,cpp.PointerErrors
+JavaNewbie,java,0.76,255,3,java.NullPointerException
+LogicLooper,python,0.80,575,5,python.OffByOne
+PolyglotPro,java,0.74,450,0,(No Mistake)
+PointerStruggler,cpp,0.33,650,27,cpp.MemoryLeaks
+JavaNewbie,java,0.75,56,2,java.TypeMismatch
+Pythonista,python,0.72,146,0,(No Mistake)
+LogicLooper,cpp,0.75,625,28,cpp.InfiniteLoop
+PointerStruggler,java,0.79,0,0,(No Mistake)
+JavaNewbie,python,0.95,0,2,python.IndentationError
+PolyglotPro,python,0.76,385,0,(No Mistake)
+LogicLooper,java,0.85,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.71,615,6,cpp.PointerErrors
+JavaNewbie,java,0.74,295,4,java.NullPointerException
+Pythonista,cpp,0.47,250,0,(No Mistake)
+LogicLooper,python,0.81,585,5,python.OffByOne
+PolyglotPro,cpp,0.78,455,0,(No Mistake)
+PointerStruggler,cpp,0.43,555,4,cpp.MemoryLeaks
+JavaNewbie,java,0.73,53,1,java.StaticMethods
+Pythonista,java,0.48,176,0,(No Mistake)
+LogicLooper,cpp,0.76,635,29,cpp.InfiniteLoop
+PointerStruggler,python,0.98,0,2,python.NameError
+JavaNewbie,cpp,0.91,345,5,cpp.OffByOne
+PolyglotPro,java,0.73,460,0,(No Mistake)
+LogicLooper,java,0.86,0,3,java.ArrayIndexOutOfBounds
+Pythonista,python,0.70,150,0,(No Mistake)
+PointerStruggler,cpp,0.72,625,7,cpp.PointerErrors
+JavaNewbie,java,0.72,265,3,java.NullPointerException
+LogicLooper,python,0.82,595,5,python.OffByOne
+PolyglotPro,python,0.75,395,0,(No Mistake)
+PointerStruggler,cpp,0.34,670,28,cpp.MemoryLeaks
+JavaNewbie,java,0.71,58,2,java.TypeMismatch
+Pythonista,cpp,0.45,256,0,(No Mistake)
+LogicLooper,cpp,0.77,645,29,cpp.InfiniteLoop
+PointerStruggler,java,0.77,0,0,(No Mistake)
+JavaNewbie,python,0.93,0,2,python.IndentationError
+PolyglotPro,cpp,0.77,465,0,(No Mistake)
+LogicLooper,java,0.87,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.73,635,6,cpp.PointerErrors
+JavaNewbie,java,0.70,305,4,java.NullPointerException
+Pythonista,java,0.46,180,0,(No Mistake)
+LogicLooper,python,0.83,605,5,python.OffByOne
+PolyglotPro,java,0.72,470,0,(No Mistake)
+PointerStruggler,cpp,0.44,575,5,cpp.MemoryLeaks
+JavaNewbie,java,0.69,55,1,java.StaticMethods
+Pythonista,python,0.68,154,0,(No Mistake)
+LogicLooper,cpp,0.78,655,30,cpp.InfiniteLoop
+PointerStruggler,python,1.00,0,2,python.NameError
+JavaNewbie,cpp,0.93,355,5,cpp.OffByOne
+PolyglotPro,python,0.74,405,0,(No Mistake)
+LogicLooper,java,0.88,0,3,java.ArrayIndexOutOfBounds
+Pythonista,cpp,0.43,262,0,(No Mistake)
+PointerStruggler,cpp,0.74,645,7,cpp.PointerErrors
+JavaNewbie,java,0.68,275,3,java.NullPointerException
+LogicLooper,python,0.84,615,5,python.OffByOne
+PolyglotPro,cpp,0.76,475,0,(No Mistake)
+PointerStruggler,cpp,0.35,690,29,cpp.MemoryLeaks
+JavaNewbie,java,0.67,60,2,java.TypeMismatch
+Pythonista,java,0.44,184,0,(No Mistake)
+LogicLooper,cpp,0.79,665,30,cpp.InfiniteLoop
+PointerStruggler,java,0.75,0,0,(No Mistake)
+JavaNewbie,python,0.91,0,2,python.IndentationError
+PolyglotPro,java,0.71,480,0,(No Mistake)
+LogicLooper,java,0.89,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.75,655,6,cpp.PointerErrors
+JavaNewbie,java,0.66,315,4,java.NullPointerException
+Pythonista,python,0.66,158,0,(No Mistake)
+LogicLooper,python,0.85,625,5,python.OffByOne
+PolyglotPro,python,0.73,415,0,(No Mistake)
+PointerStruggler,cpp,0.45,595,4,cpp.MemoryLeaks
+JavaNewbie,java,0.65,57,1,java.StaticMethods
+Pythonista,cpp,0.41,268,0,(No Mistake)
+LogicLooper,cpp,0.80,675,31,cpp.InfiniteLoop
+PointerStruggler,python,0.99,0,2,python.NameError
+JavaNewbie,cpp,0.95,365,5,cpp.OffByOne
+PolyglotPro,cpp,0.75,485,0,(No Mistake)
+LogicLooper,java,0.90,0,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.42,188,0,(No Mistake)
+PointerStruggler,cpp,0.76,665,7,cpp.PointerErrors
+JavaNewbie,java,0.64,285,3,java.NullPointerException
+LogicLooper,python,0.86,635,5,python.OffByOne
+PolyglotPro,java,0.70,490,0,(No Mistake)
+PointerStruggler,cpp,0.36,710,30,cpp.MemoryLeaks
+JavaNewbie,java,0.63,62,2,java.TypeMismatch
+Pythonista,python,0.64,162,0,(No Mistake)
+LogicLooper,cpp,0.81,685,31,cpp.InfiniteLoop
+PointerStruggler,java,0.73,0,0,(No Mistake)
+JavaNewbie,python,0.89,0,2,python.IndentationError
+PolyglotPro,python,0.72,425,0,(No Mistake)
+LogicLooper,java,0.91,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.77,675,6,cpp.PointerErrors
+JavaNewbie,java,0.62,325,4,java.NullPointerException
+Pythonista,cpp,0.39,274,0,(No Mistake)
+LogicLooper,python,0.87,645,5,python.OffByOne
+PolyglotPro,cpp,0.74,495,0,(No Mistake)
+PointerStruggler,cpp,0.46,615,5,cpp.MemoryLeaks
+JavaNewbie,java,0.61,59,1,java.StaticMethods
+Pythonista,java,0.40,192,0,(No Mistake)
+LogicLooper,cpp,0.82,695,32,cpp.InfiniteLoop
+PointerStruggler,python,0.97,0,2,python.NameError
+JavaNewbie,cpp,0.97,375,5,cpp.OffByOne
+PolyglotPro,java,0.69,500,0,(No Mistake)
+LogicLooper,java,0.92,0,3,java.ArrayIndexOutOfBounds
+Pythonista,python,0.62,166,0,(No Mistake)
+PointerStruggler,cpp,0.78,685,7,cpp.PointerErrors
+JavaNewbie,java,0.60,295,3,java.NullPointerException
+LogicLooper,python,0.88,655,5,python.OffByOne
+PolyglotPro,python,0.71,435,0,(No Mistake)
+PointerStruggler,cpp,0.37,730,31,cpp.MemoryLeaks
+JavaNewbie,java,0.59,64,2,java.TypeMismatch
+Pythonista,cpp,0.37,280,0,(No Mistake)
+LogicLooper,cpp,0.83,705,32,cpp.InfiniteLoop
+PointerStruggler,java,0.71,0,0,(No Mistake)
+JavaNewbie,python,0.87,0,2,python.IndentationError
+PolyglotPro,cpp,0.73,505,0,(No Mistake)
+LogicLooper,java,0.93,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.79,695,6,cpp.PointerErrors
+JavaNewbie,java,0.58,335,4,java.NullPointerException
+Pythonista,java,0.38,196,0,(No Mistake)
+LogicLooper,python,0.89,665,5,python.OffByOne
+PolyglotPro,java,0.68,510,0,(No Mistake)
+PointerStruggler,cpp,0.47,635,4,cpp.MemoryLeaks
+JavaNewbie,java,0.57,61,1,java.StaticMethods
+Pythonista,python,0.60,170,0,(No Mistake)
+LogicLooper,cpp,0.84,715,33,cpp.InfiniteLoop
+PointerStruggler,python,0.95,0,2,python.NameError
+JavaNewbie,cpp,0.99,385,5,cpp.OffByOne
+PolyglotPro,python,0.70,445,0,(No Mistake)
+LogicLooper,java,0.94,0,3,java.ArrayIndexOutOfBounds
+Pythonista,cpp,0.35,286,0,(No Mistake)
+PointerStruggler,cpp,0.80,705,7,cpp.PointerErrors
+JavaNewbie,java,0.56,305,3,java.NullPointerException
+LogicLooper,python,0.90,675,5,python.OffByOne
+PolyglotPro,cpp,0.72,515,0,(No Mistake)
+PointerStruggler,cpp,0.38,750,32,cpp.MemoryLeaks
+JavaNewbie,java,0.55,66,2,java.TypeMismatch
+Pythonista,java,0.36,200,0,(No Mistake)
+LogicLooper,cpp,0.85,725,33,cpp.InfiniteLoop
+PointerStruggler,java,0.69,0,0,(No Mistake)
+JavaNewbie,python,0.85,0,2,python.IndentationError
+PolyglotPro,java,0.67,520,0,(No Mistake)
+LogicLooper,java,0.95,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.81,715,6,cpp.PointerErrors
+JavaNewbie,java,0.54,345,4,java.NullPointerException
+Pythonista,python,0.58,174,0,(No Mistake)
+LogicLooper,python,0.91,685,5,python.OffByOne
+PolyglotPro,python,0.69,455,0,(No Mistake)
+PointerStruggler,cpp,0.48,655,5,cpp.MemoryLeaks
+JavaNewbie,java,0.53,63,1,java.StaticMethods
+Pythonista,cpp,0.33,292,0,(No Mistake)
+LogicLooper,cpp,0.86,735,34,cpp.InfiniteLoop
+PointerStruggler,python,0.93,0,2,python.NameError
+JavaNewbie,cpp,1.00,395,5,cpp.OffByOne
+PolyglotPro,cpp,0.71,525,0,(No Mistake)
+LogicLooper,java,0.96,0,3,java.ArrayIndexOutOfBounds
+Pythonista,java,0.34,204,0,(No Mistake)
+PointerStruggler,cpp,0.82,725,7,cpp.PointerErrors
+JavaNewbie,java,0.52,315,3,java.NullPointerException
+LogicLooper,python,0.92,695,5,python.OffByOne
+PolyglotPro,java,0.66,530,0,(No Mistake)
+PointerStruggler,cpp,0.39,770,33,cpp.MemoryLeaks
+JavaNewbie,java,0.51,68,2,java.TypeMismatch
+Pythonista,python,0.56,178,0,(No Mistake)
+LogicLooper,cpp,0.87,745,34,cpp.InfiniteLoop
+PointerStruggler,java,0.67,0,0,(No Mistake)
+JavaNewbie,python,0.83,0,2,python.IndentationError
+PolyglotPro,python,0.68,465,0,(No Mistake)
+LogicLooper,java,0.97,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.83,735,6,cpp.PointerErrors
+JavaNewbie,java,0.50,355,4,java.NullPointerException
+Pythonista,cpp,0.31,298,0,(No Mistake)
+LogicLooper,python,0.93,705,5,python.OffByOne
+PolyglotPro,cpp,0.70,535,0,(No Mistake)
+PointerStruggler,cpp,0.49,675,4,cpp.MemoryLeaks
+JavaNewbie,java,0.49,65,1,java.StaticMethods
+Pythonista,java,0.32,208,0,(No Mistake)
+LogicLooper,cpp,0.88,755,35,cpp.InfiniteLoop
+PointerStruggler,python,0.91,0,2,python.NameError
+JavaNewbie,cpp,0.98,405,5,cpp.OffByOne
+PolyglotPro,java,0.65,540,0,(No Mistake)
+LogicLooper,java,0.98,0,3,java.ArrayIndexOutOfBounds
+Pythonista,python,0.54,182,0,(No Mistake)
+PointerStruggler,cpp,0.84,745,7,cpp.PointerErrors
+JavaNewbie,java,0.48,325,3,java.NullPointerException
+LogicLooper,python,0.94,715,5,python.OffByOne
+PolyglotPro,python,0.67,475,0,(No Mistake)
+PointerStruggler,cpp,0.40,790,34,cpp.MemoryLeaks
+JavaNewbie,java,0.47,70,2,java.TypeMismatch
+Pythonista,cpp,0.29,304,0,(No Mistake)
+LogicLooper,cpp,0.89,765,35,cpp.InfiniteLoop
+PointerStruggler,java,0.65,0,0,(No Mistake)
+JavaNewbie,python,0.81,0,2,python.IndentationError
+PolyglotPro,cpp,0.69,545,0,(No Mistake)
+LogicLooper,java,0.99,0,3,java.ArrayIndexOutOfBounds
+PointerStruggler,cpp,0.85,755,6,cpp.PointerErrors
+JavaNewbie,java,0.46,365,4,java.NullPointerException
+Pythonista,java,0.30,212,0,(No Mistake)
+LogicLooper,python,0.95,725,5,python.OffByOne
+PolyglotPro,java,0.64,550,0,(No Mistake)
+PointerStruggler,cpp,0.50,695,5,cpp.MemoryLeaks
+JavaNewbie,java,0.45,67,1,java.StaticMethods
+Pythonista,python,0.52,186,0,(No Mistake)
+LogicLooper,cpp,0.90,775,36,cpp.InfiniteLoop
+PointerStruggler,python,0.89,0,2,python.NameError
