@@ -2,12 +2,14 @@
 
 import Link from 'next/link';
 // THE FIX IS HERE: We import server functions and client components separately.
-import { UserButton } from '@clerk/nextjs';
+//import { UserButton } from '@clerk/nextjs';
 import { auth } from '@clerk/nextjs/server';
+//import { User } from '@clerk/nextjs/server';
 
 const HomePage = () => {
   // This helper from Clerk gets the user's session information on the server.
   const { userId } = auth();
+  console.log(userId);
 
   return (
     <main className="min-h-screen bg-slate-900 text-white flex items-center justify-center p-8">
@@ -36,12 +38,12 @@ const HomePage = () => {
 
         {/* Description Section */}
         <div className="mt-16 text-left grid md:grid-cols-2 gap-8">
-            <div className="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
-                <h3 className="text-xl font-semibold mb-2 text-green-400">Intelligent Suggestions</h3>
+            <div className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center">
+                <div className='w-full text-center'><h3 className="text-xl font-semibold mb-2 text-green-400">Intelligent Suggestions</h3></div>
                 <p className="text-slate-400">Go beyond simple autocompletion. Synapse analyzes your code's context to provide smart, relevant suggestions and identify potential errors before you even run your code.</p>
             </div>
-            <div className="bg-slate-800/50 p-6 rounded-lg border border-slate-700">
-                <h3 className="text-xl font-semibold mb-2 text-green-400">Personalized Learning</h3>
+            <div className="bg-slate-800/50 p-6 rounded-lg border border-slate-700 text-center">
+                <div className='w-full text-center'><h3 className="text-xl font-semibold mb-2 text-green-400">Personalized Learning</h3></div>
                 <p className="text-slate-400">Our ML models learn your unique coding habits, identifying your common mistakes and strengths to provide a personalized learning path, helping you improve over time.</p>
             </div>
         </div>

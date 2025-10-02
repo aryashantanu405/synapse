@@ -41,9 +41,6 @@ const CodeEditorPage = () => {
         setOutput(null); // Clear output when switching files
     };
     
-    // The handleRunCode function is now part of the main layout's navbar,
-    // so it would need to be managed by a shared state (like Zustand or Context)
-    // For now, we'll keep the logic here to ensure the page is functional.
     const handleRunCode = async () => {
         setIsLoading(true);
         setOutput(null);
@@ -67,10 +64,31 @@ const CodeEditorPage = () => {
     };
     
     return (
-        // The main container no longer needs its own header
         <main className="flex flex-col h-full bg-slate-900 text-slate-100 overflow-hidden">
-            {/* The Header is removed from this page component */}
             
+            {/* --- THE FIX IS HERE: A dedicated toolbar for the editor page --- */}
+            <div className="flex items-center justify-end px-4 py-2 bg-slate-800 border-b border-slate-700 flex-shrink-0">
+                <div className="flex items-center gap-4">
+                    {/* <select
+                        value={language}
+                        onChange={(e) => setLanguage(e.target.value)}
+                        className="bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    >
+                        <option value="cpp">C++</option>
+                        <option value="java">Java</option>
+                        <option value="python">Python</option>
+                    </select> */}
+                    <button
+                        onClick={handleRunCode}
+                        className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-5 rounded-md text-sm transition-all duration-200 flex items-center gap-2 disabled:bg-slate-500 disabled:cursor-not-allowed"
+                        disabled={isLoading}
+                    >
+                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" /></svg>
+                        {isLoading ? 'Running...' : 'Run'}
+                    </button>
+                </div>
+            </div>
+
             <PanelGroup direction="vertical" className="flex-grow">
                 {/* Top Section (File Explorer + Editor) */}
                 <Panel defaultSize={70}>
