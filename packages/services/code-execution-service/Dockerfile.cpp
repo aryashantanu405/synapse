@@ -1,11 +1,5 @@
-# Dockerfile.toolbox
-
-# Step A: Start with a basic OS
+# packages/services/code-execution-service/Dockerfile.cpp
 FROM ubuntu:latest
-
-# Step B: Install the C++ compiler tools. This is the only setup we need.
-RUN apt-get update && apt-get install -y g++
-
-# Step C: Set a working directory inside the container.
-# This will be the "workbench" area where we place our code.
+# THE FIX: Install 'coreutils' which contains the 'timeout' command
+RUN apt-get update && apt-get install -y g++ coreutils
 WORKDIR /app

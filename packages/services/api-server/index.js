@@ -38,17 +38,26 @@ app.use('/api/projects', projectRoutes);
 app.use('/api/users', userRoutes);
 app.get('/api/health', (req, res) => res.json({ status: 'ok', message: 'API Server is running!' }));
 
-
+const lastHintTimestamps = new Map();
 // --- 4. Define WebSocket Logic ---
 // This block runs every time a new user connects via WebSocket
 io.on('connection', (socket) => {
   console.log(`🔌 WebSocket connected: ${socket.id}`);
+    lastHintTimestamps.set(socket.id, 0); 
 
   // This is the event listener for real-time code changes from the frontend
   socket.on('code_change', async (data) => {
     // data will look like: { clerkId, code_snippet, language, ... }
     console.log(`Received code change from ${socket.id}`);
-    
+    const now = Date.now();
+    const lastHintTime = lastHintTimestamps.get(socket.id);
+    const tenSeconds = 10 * 1000;
+
+    // If less than 10 seconds have passed, do nothing.
+    if (now - lastHintTime < tenSeconds) {
+      // console.log("Rate limit: Not requesting hint yet.");
+      return; 
+    }
     try {
       // Step A: Find the user to get their archetype
       const user = await User.findOne({ clerkId: data.clerkId });
@@ -87,6 +96,7 @@ io.on('connection', (socket) => {
   // Handle disconnection
   socket.on('disconnect', () => {
     console.log(`🔌 WebSocket disconnected: ${socket.id}`);
+    lastHintTimestamps.delete(socket.id);
   });
 });
 

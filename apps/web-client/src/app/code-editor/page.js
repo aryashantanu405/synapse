@@ -1,11 +1,17 @@
 // apps/web-client/src/app/editor/page.js
 
 'use client';
-import { useState } from 'react';
+// SOCKET INTEGRATION: Import useEffect and useRef for managing the connection
+import { useState, useEffect, useRef } from 'react';
 import Editor from '@monaco-editor/react';
 import { Panel, PanelGroup, PanelResizeHandle } from "react-resizable-panels";
+// SOCKET INTEGRATION: Import the useUser hook to get the logged-in user's ID
+import { useUser } from '@clerk/nextjs';
+// SOCKET INTEGRATION: Import the socket.io client library
+import io from 'socket.io-client';
 
-// Mock data for the file explorer
+
+// Mock data for the file explorer (remains the same)
 const files = {
   'main.cpp': {
     name: 'main.cpp',
@@ -32,13 +38,62 @@ const CodeEditorPage = () => {
     const [output, setOutput] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
 
+    // SOCKET INTEGRATION: Add state for the AI hint and connection status
+    const [aiHint, setAiHint] = useState(null);
+    const [isConnected, setIsConnected] = useState(false);
+    
+    // SOCKET INTEGRATION: Get user info from Clerk
+    const { user } = useUser();
+    
+    // SOCKET INTEGRATION: Use a ref to hold the socket instance and a timer for debouncing
+    const socketRef = useRef(null);
+    const debounceTimer = useRef(null);
+
+    // SOCKET INTEGRATION: This effect establishes and cleans up the WebSocket connection
+    useEffect(() => {
+        if (!user) return; // Don't connect if the user is not loaded yet
+
+        const socket = io('http://localhost:4000'); // Connect to your api-server
+        socketRef.current = socket;
+
+        socket.on('connect', () => {
+            console.log('WebSocket connected:', socket.id);
+            setIsConnected(true);
+        });
+
+        socket.on('disconnect', () => {
+            console.log('WebSocket disconnected');
+            setIsConnected(false);
+        });
+
+        // Listen for hints coming back from the server
+        socket.on('new_hint', (data) => {
+            if (data.hint && data.hint !== "(No Hint)") {
+                setAiHint(data.hint);
+            } else {
+                setAiHint(null);
+            }
+        });
+
+        socket.on('hint_error', (error) => {
+            console.error('Socket hint error:', error.message);
+        });
+
+        // Cleanup function to disconnect when the component unmounts
+        return () => {
+            socket.disconnect();
+        };
+    }, [user]); // Reconnect if the user changes
+
+
     const activeFile = files[fileName];
 
     const handleFileSelect = (file) => {
         setFileName(file.name);
         setCode(file.value);
         setLanguage(file.language);
-        setOutput(null); // Clear output when switching files
+        setOutput(null);
+        setAiHint(null); // Clear hint when switching files
     };
     
     const handleRunCode = async () => {
@@ -63,21 +118,39 @@ const CodeEditorPage = () => {
         }
     };
     
+    // SOCKET INTEGRATION: New handler for the editor's onChange event
+    const handleEditorChange = (value) => {
+        setCode(value || '');
+        setAiHint(null); // Clear any existing hint immediately on typing
+
+        // Debounce logic: wait for the user to stop typing for 1.5 seconds
+        if (debounceTimer.current) {
+            clearTimeout(debounceTimer.current);
+        }
+
+        debounceTimer.current = setTimeout(() => {
+            if (socketRef.current && isConnected && user && value) {
+                // After 1.5s, send the code to the server for a hint
+                socketRef.current.emit('code_change', {
+                    clerkId: user.id,
+                    code_snippet: value,
+                    language: language,
+                });
+            }
+        }, 1500); // 1.5 second delay
+    };
+    
     return (
         <main className="flex flex-col h-full bg-slate-900 text-slate-100 overflow-hidden">
             
-            {/* --- THE FIX IS HERE: A dedicated toolbar for the editor page --- */}
-            <div className="flex items-center justify-end px-4 py-2 bg-slate-800 border-b border-slate-700 flex-shrink-0">
+            <div className="flex items-center justify-between px-4 py-2 bg-slate-800 border-b border-slate-700 flex-shrink-0">
+                {/* SOCKET INTEGRATION: Added a visual connection status indicator */}
+                <div className="flex items-center gap-2" title={isConnected ? 'Real-time service connected' : 'Real-time service disconnected'}>
+                    <div className={`w-3 h-3 rounded-full transition-colors ${isConnected ? 'bg-green-500' : 'bg-red-500'}`}></div>
+                    <span className="text-xs text-slate-400">{isConnected ? 'Connected' : 'Disconnected'}</span>
+                </div>
+
                 <div className="flex items-center gap-4">
-                    {/* <select
-                        value={language}
-                        onChange={(e) => setLanguage(e.target.value)}
-                        className="bg-slate-700 border border-slate-600 rounded-md px-3 py-1.5 text-sm text-slate-100 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    >
-                        <option value="cpp">C++</option>
-                        <option value="java">Java</option>
-                        <option value="python">Python</option>
-                    </select> */}
                     <button
                         onClick={handleRunCode}
                         className="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-5 rounded-md text-sm transition-all duration-200 flex items-center gap-2 disabled:bg-slate-500 disabled:cursor-not-allowed"
@@ -90,7 +163,6 @@ const CodeEditorPage = () => {
             </div>
 
             <PanelGroup direction="vertical" className="flex-grow">
-                {/* Top Section (File Explorer + Editor) */}
                 <Panel defaultSize={70}>
                     <PanelGroup direction="horizontal">
                         <Panel defaultSize={20} minSize={15} className="bg-slate-800 flex flex-col">
@@ -104,22 +176,29 @@ const CodeEditorPage = () => {
                            </div>
                         </Panel>
                         <PanelResizeHandle className="w-2 bg-slate-800 hover:bg-blue-600 transition-colors duration-200 cursor-col-resize" />
-                        <Panel>
+                        <Panel className="relative">
                             <Editor
                                 path={activeFile.name}
                                 defaultLanguage={activeFile.language}
                                 value={code}
-                                onChange={(value) => setCode(value || '')}
+                                // SOCKET INTEGRATION: Use the new debounced handler
+                                onChange={handleEditorChange}
                                 theme="vs-dark"
                                 options={{ fontSize: 16, minimap: { enabled: false } }}
                             />
+                            {/* SOCKET INTEGRATION: UI to display the hint */}
+                            {aiHint && (
+                                <div className="absolute bottom-4 right-4 bg-blue-900/80 border border-blue-700 text-blue-100 p-3 rounded-lg shadow-lg max-w-sm backdrop-blur-sm animate-pulse">
+                                    <p className="font-semibold text-sm mb-1">💡 AI Suggestion</p>
+                                    <p className="text-sm">{aiHint}</p>
+                                </div>
+                            )}
                         </Panel>
                     </PanelGroup>
                 </Panel>
                 
                 <PanelResizeHandle className="h-2 bg-slate-800 hover:bg-blue-600 transition-colors duration-200 cursor-row-resize"/>
 
-                {/* Bottom Section (Input + Output) */}
                 <Panel defaultSize={30}>
                     <PanelGroup direction="horizontal">
                         <Panel className="bg-[#1e1e1e] flex flex-col">

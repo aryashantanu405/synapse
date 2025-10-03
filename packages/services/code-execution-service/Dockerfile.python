@@ -1,10 +1,5 @@
-# Step 1: Start from a basic Ubuntu operating system.
+# packages/services/code-execution-service/Dockerfile.python
 FROM ubuntu:latest
-
-# Step 2: Update the package manager and install Python.
-# This installs the Python interpreter needed to run .py scripts.
-RUN apt-get update && apt-get install -y python3
-
-# Step 3: Set a working directory inside the container.
-# This will be the "workbench" where the user's code is placed at runtime.
+# THE FIX: Install 'coreutils'
+RUN apt-get update && apt-get install -y python3 python3-pip coreutils
 WORKDIR /app

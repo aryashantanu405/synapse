@@ -1,10 +1,12 @@
+// apps/web-client/src/app/sign-in/[[...sign-in]]/page.js
+
 import { SignIn } from "@clerk/nextjs";
 
 export default function Page() {
-  // This pre-built component from Clerk handles the entire sign-in UI and logic.
   return (
     <div className="flex items-center justify-center h-screen">
-      <SignIn />
+      {/* Redirect to a protected page after sign-in */}
+      <SignIn afterSignInUrl="/code-editor" />
     </div>
   );
 }

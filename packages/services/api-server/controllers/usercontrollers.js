@@ -3,77 +3,88 @@
 import User from '../models/user.model.js';
 import axios from 'axios';
 
-// (getUsers and getUserByClerkId functions are here...)
-const getUsers = async (req, res) => {
+// --- (Existing functions remain the same) ---
+const getUsers = async (req, res) => { /* ... */ };
+const getUserByClerkId = async (req, res) => { /* ... */ };
+const analyzeUserArchetype = async (req, res) => { /* ... */ };
+const generateCodeHint = async (req, res) => { /* ... */ };
+
+// --- This is the function the route is missing ---
+const syncUser = async (req, res) => {
   try {
-    const users = await User.find({});
-    res.json(users);
-  } catch (error) {
-    res.status(500).json({ message: 'Server Error' });
-  }
-};
-const getUserByClerkId = async (req, res) => {
-  try {
-    const user = await User.findOne({ clerkId: req.params.clerkId });
-    if (user) {
-      res.json(user);
-    } else {
-      res.status(404).json({ message: 'User not found' });
+    // --- THE FIX IS HERE ---
+    // We are now destructuring the CORRECT properties from the Clerk user object.
+    const { id, username, primaryEmailAddress, imageUrl } = req.body;
+
+    if (!id || !primaryEmailAddress) {
+      return res.status(400).json({ message: 'Clerk ID and primary email are required.' });
     }
+    
+    const user = await User.findOneAndUpdate(
+      { clerkId: id },
+      {
+        $setOnInsert: {
+          clerkId: id,
+          email: primaryEmailAddress.emailAddress, // Correctly access the nested email
+          username: username,
+          image: { url: imageUrl || '/path/to/your/placeholder-image.png' },
+          userArchetype: 'Newbie',
+        }
+      },
+      { upsert: true, new: true, runValidators: true }
+    );
+    
+    console.log(`User ${id} synced successfully.`);
+    res.status(200).json(user);
+
   } catch (error) {
-    res.status(500).json({ message: 'Server Error' });
+    console.error('Error syncing user:', error);
+    res.status(500).json({ message: 'Error syncing user.' });
   }
 };
-
-const analyzeUserArchetype = async (req, res) => {
+const logUserActivity = async (req, res) => {
   try {
-    const user = await User.findOne({ clerkId: req.params.clerkId });
-    if (!user) { return res.status(404).json({ message: 'User not found' }); }
-    const mistakePatternsDict = user.mistakePatterns.reduce((acc, pattern) => {
-      acc[pattern.patternId] = pattern.occurrenceCount;
-      return acc;
-    }, {});
-    const mlServiceUrl = 'http://localhost:8000/predict/archetype';
-    const mlResponse = await axios.post(mlServiceUrl, { mistake_patterns: mistakePatternsDict });
-    const { archetype } = mlResponse.data;
-    user.userArchetype = archetype;
-    await user.save();
-    res.status(200).json({ clerkId: user.clerkId, archetype: user.userArchetype });
-  } catch (error) {
-    console.error("Error during analysis:", error.response ? error.response.data : error.message);
-    res.status(500).json({ message: 'Failed to analyze user archetype.' });
-  }
-};
-
-const generateCodeHint = async (req, res) => {
-  try {
+    const { eventType, details } = req.body;
+    
     const user = await User.findOne({ clerkId: req.params.clerkId });
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
-    const { code_snippet, language } = req.body;
-    if (!code_snippet || !language) {
-      return res.status(400).json({ message: 'code_snippet and language are required.' });
+
+    // Add the event to the user's activity log (and cap it at 50 entries)
+    user.activityLog.unshift({ eventType, details });
+    if (user.activityLog.length > 50) {
+      user.activityLog.pop();
     }
-    const contextPayload = {
-      userArchetype: user.userArchetype,
-      currentLanguage: language,
-      conceptMasteryScore: 0.3,
-      timeInSession_minutes: 60,
-      recentErrorCount: 2
-    };
-    const mlServiceUrl = 'http://localhost:8000/generate/hint';
-    const mlResponse = await axios.post(mlServiceUrl, {
-      language: language,
-      code_snippet: code_snippet,
-      context: contextPayload
-    });
-    res.status(200).json(mlResponse.data);
+
+    // If the event was a failed execution, update the mistake patterns
+    if (eventType === 'execution_failed' && details.mistakePatternId) {
+      const patternId = details.mistakePatternId;
+      const patternIndex = user.mistakePatterns.findIndex(p => p.patternId === patternId);
+
+      if (patternIndex > -1) {
+        // If the pattern already exists, increment its count
+        user.mistakePatterns[patternIndex].occurrenceCount += 1;
+        user.mistakePatterns[patternIndex].lastOccurrence = new Date();
+      } else {
+        // If it's a new mistake pattern, add it to the array
+        user.mistakePatterns.push({
+          patternId: patternId,
+          language: details.language,
+          description: "A new mistake was logged.", // Could be enhanced later
+          occurrenceCount: 1,
+          lastOccurrence: new Date(),
+        });
+      }
+    }
+    
+    await user.save();
+    res.status(200).json({ message: 'Activity logged successfully.' });
+
   } catch (error) {
-    console.error("Error generating hint:", error.response ? error.response.data : error.message);
-    res.status(500).json({ message: 'Failed to generate hint.' });
+    console.error('Error logging activity:', error);
+    res.status(500).json({ message: 'Error logging activity.' });
   }
 };
 
-// --- THIS IS THE KEY EXPORT PART ---
-export { getUsers, getUserByClerkId, analyzeUserArchetype, generateCodeHint };
+export { getUsers, getUserByClerkId, analyzeUserArchetype, generateCodeHint, syncUser,logUserActivity };

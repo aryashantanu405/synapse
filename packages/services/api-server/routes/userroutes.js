@@ -6,15 +6,21 @@ import {
   getUsers,
   getUserByClerkId,
   analyzeUserArchetype,
-  generateCodeHint, // <-- THE FIX: Use the correct function name here
-} from '../controllers/usercontrollers.js'; // <-- Also fixed the filename typo
+  generateCodeHint,
+  syncUser,
+  logUserActivity // Make sure syncUser is imported
+} from '../controllers/usercontrollers.js'; // Ensure correct path
 
 // Existing routes...
 router.route('/').get(getUsers);
 router.route('/:clerkId').get(getUserByClerkId);
 router.route('/:clerkId/analyze').post(analyzeUserArchetype);
-
-// THE FIX: And use the correct function name here
 router.route('/:clerkId/generate-hint').post(generateCodeHint);
+
+// --- THE FIX IS HERE ---
+// This line was missing. It connects the '/sync' path to the syncUser function.
+router.route('/sync').post(syncUser);
+
+router.route('/:clerkId/log-activity').post(logUserActivity);
 
 export default router;
